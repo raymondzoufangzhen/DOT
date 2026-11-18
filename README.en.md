@@ -63,6 +63,21 @@ Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ---
 
+## Default temperatures
+
+The program ships with **240 °C nozzle / 75 °C bed**, and those values are set up **for PETG**.
+
+| Material | Nozzle | Bed |
+|---|---|---|
+| **PETG** (default) | 240 °C | 75 °C |
+| PLA | 200–210 °C | 55–60 °C |
+
+**Lower the temperature before printing PLA.** At 240 °C PLA strings and oozes, and a 75 °C bed makes it elephant-foot and cling to the plate. Both values are editable in the settings window; the accepted range is 180–260 °C nozzle and 0–100 °C bed.
+
+Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by this program — it only exposes the temperature fields, so set them to whatever that material normally needs.
+
+---
+
 ## Caveats
 
 1. `printer.cfg` must enable `[gcode_arcs]` and `[exclude_object]`. This is a hard prerequisite — the program can only warn, it cannot set this for you.
