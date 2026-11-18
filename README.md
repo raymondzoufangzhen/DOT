@@ -14,7 +14,7 @@ Type text → preview the dots live → export G-code → send it to the printer
 
 | File | Notes |
 |---|---|
-| `DOCv1.2.exe` | Windows 10 / 11 (64-bit), about 17 MB |
+| `DOTv1.2.exe` | Windows 10 / 11 (64-bit), about 17 MB |
 
 Single-file portable build. No installer, no Python, no runtime libraries. Copy it anywhere and double-click.
 
@@ -54,7 +54,7 @@ Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ## Usage
 
-1. Double-click `DOCv1.2.exe`
+1. Double-click `DOTv1.2.exe`
 2. **Settings → Printer** → pick your machine in the dialog that opens (brands on the left, models on the right, with search)
 3. Type your text and check the dot layout and line count in the preview
 4. Export, then copy the G-code to the printer
