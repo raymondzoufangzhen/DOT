@@ -10,7 +10,7 @@
 
 ## 下载
 
-**前往 [Releases](https://github.com/raymondzoufangzhen/one-click-braille-print/releases/latest) 下载最新版**
+**前往 [Releases](https://github.com/raymondzoufangzhen/DOT/releases/latest) 下载最新版**
 
 | 文件 | 说明 |
 |---|---|
@@ -87,7 +87,7 @@ Marlin、RepRapFirmware、Repetier 方言机型不在支持范围。
 
 ## 反馈
 
-使用中遇到问题、机型适配失败或宏不匹配，请开 [Issue](https://github.com/raymondzoufangzhen/one-click-braille-print/issues)，附上机型名称与 `printer.cfg` 中对应的 `START_PRINT` / `PRINT_END` 宏定义，便于定位。
+使用中遇到问题、机型适配失败或宏不匹配，请开 [Issue](https://github.com/raymondzoufangzhen/DOT/issues)，附上机型名称与 `printer.cfg` 中对应的 `START_PRINT` / `PRINT_END` 宏定义，便于定位。
 
 ---
 
