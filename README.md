@@ -1,4 +1,6 @@
-# 一键盲文打印 · One-Click Braille Printing
+# 一键盲文打印 · DOT
+
+**DOT** — Directly Optimized TactileDots
 
 把中文文本转成可直接送去 3D 打印的盲文 G-code。面向 Klipper 与拓竹平台，内置 214 台机型配置。
 
