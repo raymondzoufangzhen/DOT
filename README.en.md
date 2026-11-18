@@ -108,6 +108,8 @@ If something fails, a machine profile doesn't fit, or a macro doesn't match, ple
 
 ## License
 
-Distributed as closed source, all rights reserved. Free to use for personal and non-commercial educational purposes; redistribution, decompilation, reverse engineering and commercial use are not permitted without permission.
+Closed source, all rights reserved. Free to use for personal, teaching and other non-commercial purposes; unmodified copies may be shared free of charge; redistributing modified versions, decompilation, reverse engineering and any commercial use are not permitted.
+
+See [LICENSE](LICENSE) for the full terms, which govern.
 
 Dot positions follow the current Chinese national braille standard; the dot geometry and its parameters are this project's own implementation.
