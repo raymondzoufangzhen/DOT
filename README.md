@@ -1,98 +1,98 @@
-# 一键盲文打印 · DOT
+**English** | [简体中文](README.zh-CN.md)
 
-**DOT** — Directly Optimized TactileDots
+# DOT — Directly Optimized TactileDots
 
-把中文文本转成可直接送去 3D 打印的盲文 G-code。面向 Klipper 与拓竹平台，内置 214 台机型配置。
+Turns Chinese text into braille G-code that can go straight to a 3D printer. Built for Klipper and Bambu Lab platforms, with 214 printer profiles included.
 
-输入文字 → 实时预览点位 → 导出 G-code → 交给打印机。
+Type text → preview the dots live → export G-code → send it to the printer.
 
 ---
 
-## 下载
+## Download
 
-**前往 [Releases](https://github.com/raymondzoufangzhen/DOT/releases/latest) 下载最新版**
+**Get the latest build from [Releases](https://github.com/raymondzoufangzhen/DOT/releases/latest)**
 
-| 文件 | 说明 |
+| File | Notes |
 |---|---|
-| `DOCv1.2.exe` | Windows 10 / 11（64 位），约 17 MB |
+| `DOCv1.2.exe` | Windows 10 / 11 (64-bit), about 17 MB |
 
-单文件绿色版，免安装，不依赖 Python 或任何运行库。复制到任意目录双击即可运行。
+Single-file portable build. No installer, no Python, no runtime libraries. Copy it anywhere and double-click.
 
-> 首次运行若被 Windows SmartScreen 拦截，点「更多信息」→「仍要运行」。程序未做代码签名，这是未签名可执行文件的常规提示。
-
----
-
-## 功能
-
-- **国标盲文转换**：按现行盲文国标点位输出，声调按规则标注；英文字母、数字、标点直接映射。多音字按首选读音处理。
-- **穹顶形凸点**：凸点做成穹顶而非圆柱，0.4 mm 喷嘴下成型稳定、触感明确、不打滑。
-- **两种几何规格**：常规规格用于日常触读；大号规格（jumbo）点距与点径放大约 1.4 倍，适合教学演示或需要更大字号的场合。
-- **自动基座与擦嘴轨迹**：连同底板、层间擦嘴路径、对象排除指令一起生成，导出的就是完整可打印文件。
-- **导出 G-code，可选 STL**：G-code 直接打印；需要二次处理时可再导出 STL。
-- **「6 工艺」测试片**：内置标定件，用于上机对比成型效果、确定本机参数。
-- **图形界面**：实时点位预览、字数上限按当前机型可打印宽度动态计算、中英文界面切换、浅色/深色主题跟随系统。
+> If Windows SmartScreen blocks the first launch, click *More info* → *Run anyway*. The executable is not code-signed, which is the normal prompt for unsigned binaries.
 
 ---
 
-## 支持机型
+## Features
 
-**214 台 / 47 个品牌**，覆盖 Creality、Elegoo（智能派）、Voron、Sovol、Anycubic、Flashforge（闪铸）、Snapmaker（快造）、Bambu Lab（拓竹）、QIDI、RatRig、TwoTrees、FLSun、Cubicon、Vivedino 等。
+- **Chinese Braille conversion**: dot patterns follow the current Chinese national braille standard, with tones applied by rule; Latin letters, digits and punctuation map directly. Polyphonic characters use their most common reading.
+- **Dome-shaped dots**: each dot is a dome rather than a cylinder, which forms reliably under a 0.4 mm nozzle, gives a crisp tactile feel and does not slip under the finger.
+- **Two size presets**: the standard preset for everyday reading; a *jumbo* preset with roughly 1.4× larger dot spacing and dot diameter for teaching, demonstrations, or wherever a larger cell is needed.
+- **Base plate and nozzle wipe included**: the base plate, inter-layer wipe path and object-exclusion commands are generated together, so the export is already a complete printable file.
+- **G-code export, STL optional**: print the G-code directly; export STL when you need further processing.
+- **"6 processes" test coupon**: a built-in calibration part for comparing forming quality on your own machine and dialling in its parameters.
+- **GUI**: live dot preview, character limit computed from the current machine's printable width, Chinese/English interface, light/dark theme following the system.
 
-前置条件：
+---
 
-| 项目 | 要求 |
+## Supported printers
+
+**214 machines across 47 brands**, including Creality, Elegoo, Voron, Sovol, Anycubic, Flashforge, Snapmaker, Bambu Lab, QIDI, RatRig, TwoTrees, FLSun, Cubicon and Vivedino.
+
+Prerequisites:
+
+| Item | Requirement |
 |---|---|
-| 固件 | Klipper 方言（依赖 `SET_VELOCITY_LIMIT`、`EXCLUDE_OBJECT`、G2/G3 圆弧、M83 相对挤出） |
-| 可打印区 | 宽、深均 ≥ 150 mm |
-| 喷嘴 | 0.4 mm |
+| Firmware | Klipper dialect (relies on `SET_VELOCITY_LIMIT`, `EXCLUDE_OBJECT`, G2/G3 arcs, M83 relative extrusion) |
+| Build volume | Printable width and depth both ≥ 150 mm |
+| Nozzle | 0.4 mm |
 
-拓竹 P1P / X1 / A1 / A1 mini / H2D 走厂商私有通道：裸 G-code 可通过 Bambu Connect 或 LAN 开发者模式提交。
+Bambu Lab P1P / X1 / A1 / A1 mini / H2D go through the vendor's own channel: raw G-code can be submitted via Bambu Connect or LAN developer mode.
 
-Marlin、RepRapFirmware、Repetier 方言机型不在支持范围。
-
----
-
-## 使用
-
-1. 双击 `DOCv1.2.exe`
-2. **设置 → 机型** → 在弹出窗口中选择你的打印机（左侧按品牌、右侧按型号，支持搜索）
-3. 输入文字，在预览区确认点位与行数
-4. 点导出，得到 G-code，拷到打印机打印
-
-**首次使用建议先打「6 工艺测试片」**，确认 Z-offset 与流量合适后再打正文；盲文凸点对首层高度比普通模型更敏感。
+Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ---
 
-## 注意事项
+## Usage
 
-1. `printer.cfg` 必须启用 `[gcode_arcs]` 与 `[exclude_object]`。这是硬前提，程序只能提示，无法代为设置。
-2. 机型表中仅 7 台的启动/结束宏经过预设交叉核对，其余为自动转换。**首次打印前请对照实际 `printer.cfg` 检查宏名与参数**，不同固件版本的宏签名可能不同。
-3. 喷嘴固定 0.4 mm。换 0.6 / 0.8 mm 会破坏凸点形状，程序不提供该选项。
-4. 程序内部自检只保证结构、温度、坐标与挤出收支自洽，**不替代上机校准**。
-5. 拓竹的 `.gcode.3mf` 封装未做上机实测，建议先用官方切片软件确认文件通道是否接受裸 G-code。
+1. Double-click `DOCv1.2.exe`
+2. **Settings → Printer** → pick your machine in the dialog that opens (brands on the left, models on the right, with search)
+3. Type your text and check the dot layout and line count in the preview
+4. Export, then copy the G-code to the printer
 
----
-
-## 版本
-
-**V1.2**（当前版本）
-
-- 机型池扩至 214 台 / 47 品牌，覆盖宽深均 ≥ 150 mm 的 Klipper 与拓竹机型
-- 输入字数上限改为按机型可打印宽度动态判断，不再套用固定 220 mm 规则
-- 机型选择独立成窗口：左侧品牌、右侧型号，双列各自滚动，支持按品牌/型号搜索
-- 界面支持中英文切换，默认跟随系统语言
-- 主界面标题标注版本号；设置窗口容纳机型按钮与语言选项
+**For a first run, print the "6 processes" test coupon first** and confirm Z-offset and flow before printing real content; braille dots are far more sensitive to first-layer height than ordinary models.
 
 ---
 
-## 反馈
+## Caveats
 
-使用中遇到问题、机型适配失败或宏不匹配，请开 [Issue](https://github.com/raymondzoufangzhen/DOT/issues)，附上机型名称与 `printer.cfg` 中对应的 `START_PRINT` / `PRINT_END` 宏定义，便于定位。
+1. `printer.cfg` must enable `[gcode_arcs]` and `[exclude_object]`. This is a hard prerequisite — the program can only warn, it cannot set this for you.
+2. Only 7 of the machine profiles have their start/end macros cross-checked against vendor presets; the rest are converted automatically. **Check the macro names and parameters against your actual `printer.cfg` before the first print** — macro signatures differ between firmware versions.
+3. The nozzle is fixed at 0.4 mm. Switching to 0.6 / 0.8 mm would ruin the dot shape, so the option is not offered.
+4. The built-in self-check only guarantees internal consistency of structure, temperature, coordinates and extrusion budget. **It does not replace calibration on the machine.**
+5. Bambu's `.gcode.3mf` packaging has not been tested on hardware. Confirm with the vendor slicer that the file channel accepts raw G-code before relying on it.
 
 ---
 
-## 许可
+## Version
 
-本程序以闭源形式分发，版权保留。允许个人与非商业教育用途的免费使用；未经许可不得再分发、反编译、反向工程或用于商业用途。
+**V1.2** (current)
 
-盲文点位依据中国现行盲文国家标准，点形与几何参数为本项目自有实现。
+- Printer pool expanded to 214 machines across 47 brands, covering Klipper and Bambu Lab models with width and depth both ≥ 150 mm
+- Character limit now derived from each machine's printable width instead of a fixed 220 mm rule
+- Printer selection moved into its own window: brands on the left, models on the right, each scrolling independently, with search by brand or model
+- Interface switches between Chinese and English, following the system language by default
+- Version number shown in the main window title; settings window holds the printer button and language option
+
+---
+
+## Feedback
+
+If something fails, a machine profile doesn't fit, or a macro doesn't match, please open an [issue](https://github.com/raymondzoufangzhen/DOT/issues) and include the machine name plus the corresponding `START_PRINT` / `PRINT_END` macro definitions from your `printer.cfg` so it can be traced.
+
+---
+
+## License
+
+Distributed as closed source, all rights reserved. Free to use for personal and non-commercial educational purposes; redistribution, decompilation, reverse engineering and commercial use are not permitted without permission.
+
+Dot positions follow the current Chinese national braille standard; the dot geometry and its parameters are this project's own implementation.
