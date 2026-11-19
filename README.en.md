@@ -2,7 +2,7 @@
 
 # DOT — Directly Optimized TactileDots
 
-Turns Chinese text into braille G-code that can go straight to a 3D printer. Built for Klipper and Bambu Lab platforms, with 239 printer profiles included.
+Turns text into braille G-code that can go straight to a 3D printer — Chinese characters, English letters, digits and common symbols are all supported, so you can print braille labels in Chinese or English. Built for Klipper and Bambu Lab platforms, with 239 printer profiles included.
 
 Type text → preview the dots live → export G-code → send it to the printer.
 
@@ -28,7 +28,7 @@ Single-file portable build. No installer, no Python, no runtime libraries. Copy 
 
 ## Features
 
-- **Chinese Braille conversion**: dot patterns follow the current Chinese national braille standard, with tones applied by rule; Latin letters, digits and punctuation map directly. Polyphonic characters use their most common reading.
+- **Braille conversion for mixed text**: Chinese characters follow the current national braille standard, with tones applied by rule and polyphonic characters using their most common reading; English letters (a–z with capital/small signs), digits (number sign + a–j) and common punctuation / math symbols map directly — Chinese and English labels are both supported, including mixed text.
 - **Dome-shaped dots**: each dot is a dome rather than a cylinder, which forms reliably under a 0.4 mm nozzle, gives a crisp tactile feel and does not slip under the finger.
 - **Two size presets**: the standard preset for everyday reading; a *jumbo* preset with roughly 1.4× larger dot spacing and dot diameter for teaching, demonstrations, or wherever a larger cell is needed.
 - **Base plate and nozzle wipe included**: the base plate, inter-layer wipe path and object-exclusion commands are generated together, so the export is already a complete printable file.
