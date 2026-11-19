@@ -8,6 +8,8 @@
 
 输入文字 → 实时预览点位 → 导出 G-code → 交给打印机。
 
+**想先快速了解项目？** 查看 [16 页双语项目介绍（在线演示文稿）](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)——键盘 ←/→ 翻页，右下角可切换中英文。
+
 ---
 
 ## 下载
