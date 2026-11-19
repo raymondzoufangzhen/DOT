@@ -6,7 +6,9 @@ Turns text into braille G-code that can go straight to a 3D printer — English 
 
 Type text → preview the dots live → export G-code → send it to the printer.
 
-**Want a quick overview first?** Check the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
+**Want a quick overview first?** Click the cover below to open the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
+
+[![DOT presentation preview (cover / printer profiles / closing)](docs/assets/presentation_preview.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
 
 ---
 
