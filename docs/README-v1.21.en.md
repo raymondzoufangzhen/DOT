@@ -1,3 +1,5 @@
+> **This is the archived V1.21 document and is no longer updated.** See [README.md](../README.md) for the current version, and the [v1.21 release](https://github.com/raymondzoufangzhen/DOT/releases/tag/v1.21) for the V1.21 build.
+
 **English** | [简体中文](README-v1.21.md)
 
 # DOT — Directly Optimized TactileDots

@@ -1,3 +1,5 @@
+> **本文档为 V1.21 存档，不再更新。** 最新文档见 [README.md](../README.md)，V1.21 程序见 [v1.21 Release](https://github.com/raymondzoufangzhen/DOT/releases/tag/v1.21)。
+
 [English](README-v1.21.en.md) | **简体中文**
 
 # 一键盲文打印 · DOT

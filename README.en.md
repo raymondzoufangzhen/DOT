@@ -2,7 +2,7 @@
 
 # DOT — Directly Optimized TactileDots
 
-Turns Chinese text into braille G-code that can go straight to a 3D printer. Built for Klipper and Bambu Lab platforms, with 214 printer profiles included.
+Turns Chinese text into braille G-code that can go straight to a 3D printer. Built for Klipper and Bambu Lab platforms, with 239 printer profiles included.
 
 Type text → preview the dots live → export G-code → send it to the printer.
 
@@ -14,8 +14,9 @@ Type text → preview the dots live → export G-code → send it to the printer
 
 | File | Notes |
 |---|---|
-| `DOTv1.21.exe` | **Latest**, Windows 10 / 11 (64-bit), about 17 MB |
-| `DOTv1.2.exe` | Previous version, still downloadable |
+| `DOTv1.22.exe` | **Latest**, Windows 10 / 11 (64-bit), about 17 MB |
+| `DOTv1.21.exe` | Previous version, still downloadable |
+| `DOTv1.2.exe` | Older version, still downloadable |
 
 Every release keeps its own build and documentation — older versions are never overwritten: [all releases](https://github.com/raymondzoufangzhen/DOT/releases).
 
@@ -39,13 +40,13 @@ Single-file portable build. No installer, no Python, no runtime libraries. Copy 
 
 ## Supported printers
 
-**214 machines across 47 brands**, including Creality, Elegoo, Voron, Sovol, Anycubic, Flashforge, Snapmaker, Bambu Lab, QIDI, RatRig, TwoTrees, FLSun, Cubicon and Vivedino.
+**239 machines across 47 brands**, including Creality, Elegoo, Voron, Sovol, Anycubic, Flashforge, Snapmaker, Bambu Lab, QIDI, RatRig, TwoTrees, FLSun, Cubicon and Vivedino.
 
 Prerequisites:
 
 | Item | Requirement |
 |---|---|
-| Firmware | Klipper dialect (relies on `SET_VELOCITY_LIMIT`, `EXCLUDE_OBJECT`, G2/G3 arcs, M83 relative extrusion) |
+| Firmware | Klipper dialect (relies on `SET_VELOCITY_LIMIT`, `EXCLUDE_OBJECT`, G2/G3 arcs, M83 relative extrusion); Marlin / RRF are not supported yet |
 | Build volume | Printable width and depth both ≥ 150 mm |
 | Nozzle | 0.4 mm |
 
@@ -57,7 +58,7 @@ Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ## Usage
 
-1. Double-click `DOTv1.21.exe`
+1. Double-click `DOTv1.22.exe`
 2. **Settings → Printer** → pick your machine in the dialog that opens (brands on the left, models on the right, with search)
 3. Type your text and check the dot layout and line count in the preview
 4. Export, then copy the G-code to the printer
@@ -93,18 +94,19 @@ Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by th
 
 ## Version
 
-**V1.21** (current)
+**V1.22** (current)
 
-- The transliteration pipeline is warmed up when the window opens, so the first keystroke no longer stalls (cold first key 575 ms → 20 ms)
-- Self-check takes about a third of the time it used to: 24.8 ms → 8.6 ms on a 5,000-line G-code, 80.3 ms → 31.3 ms on a 27,000-line one. All 19 checks reach exactly the same verdicts with the same wording
-- Geometry parameters now have a single source of truth: nine module-level constants that duplicated the profile table were removed, so editing one place can no longer miss another
-- Window title reports V1.21
+- Printer pool grows to **239 machines across 47 brands**: fixed the printable-area string parser that silently dropped 12 Klipper machines, and imported 13 more from Creality Print 7.3 and Bambu Studio 2.9
+- Every new profile passes the built-in self-check (239/239). When a converted start block is empty, a neutral heating/homing skeleton is used instead of sending `START_PRINT` to machines that do not define it
+- Profiles now carry `dialect` and `source_version` fields, plus a dialect hook in the generation path. Klipper output is byte-identical; Marlin-only conversions are declared centrally, and G2/G3 arcs fail loudly until a safe flattening pass exists
+- All 214 original machines were compared byte-for-byte: no G-code changed. Window title reports V1.22
 
 Previous versions:
 
 | Version | Notes | Docs | Build |
 |---|---|---|---|
-| **V1.21** | Current: first-key stall, self-check speed, single-source geometry | [README-v1.21.en.md](docs/README-v1.21.en.md) | `DOTv1.21.exe` |
+| **V1.22** | Current: 239 machines, four-source merge, dialect groundwork | [README-v1.22.en.md](docs/README-v1.22.en.md) | `DOTv1.22.exe` |
+| V1.21 | First-key warm-up, faster self-check, single-source geometry | [README-v1.21.en.md](docs/README-v1.21.en.md) | `DOTv1.21.exe` |
 | V1.2 | 214-printer pool, dynamic character limit, dedicated printer window, Chinese/English UI | [README-v1.2.en.md](docs/README-v1.2.en.md) | `DOTv1.2.exe` |
 
 ---

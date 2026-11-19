@@ -4,7 +4,7 @@
 
 **DOT** — Directly Optimized TactileDots
 
-把中文文本转成可直接送去 3D 打印的盲文 G-code。面向 Klipper 与拓竹平台，内置 214 台机型配置。
+把中文文本转成可直接送去 3D 打印的盲文 G-code。面向 Klipper 与拓竹平台，内置 239 台机型配置。
 
 输入文字 → 实时预览点位 → 导出 G-code → 交给打印机。
 
@@ -16,8 +16,9 @@
 
 | 文件 | 说明 |
 |---|---|
-| `DOTv1.21.exe` | **最新版**，Windows 10 / 11（64 位），约 17 MB |
-| `DOTv1.2.exe` | 上一版，保留可下载 |
+| `DOTv1.22.exe` | **最新版**，Windows 10 / 11（64 位），约 17 MB |
+| `DOTv1.21.exe` | 上一版，保留可下载 |
+| `DOTv1.2.exe` | 更早版本，保留可下载 |
 
 各版本的程序与文档并存，旧版不会被覆盖：[全部版本](https://github.com/raymondzoufangzhen/DOT/releases)。
 
@@ -41,13 +42,13 @@
 
 ## 支持机型
 
-**214 台 / 47 个品牌**，覆盖 Creality、Elegoo（智能派）、Voron、Sovol、Anycubic、Flashforge（闪铸）、Snapmaker（快造）、Bambu Lab（拓竹）、QIDI、RatRig、TwoTrees、FLSun、Cubicon、Vivedino 等。
+**239 台 / 47 个品牌**，覆盖 Creality、Elegoo（智能派）、Voron、Sovol、Anycubic、Flashforge（闪铸）、Snapmaker（快造）、Bambu Lab（拓竹）、QIDI、RatRig、TwoTrees、FLSun、Cubicon、Vivedino 等。
 
 前置条件：
 
 | 项目 | 要求 |
 |---|---|
-| 固件 | Klipper 方言（依赖 `SET_VELOCITY_LIMIT`、`EXCLUDE_OBJECT`、G2/G3 圆弧、M83 相对挤出） |
+| 固件 | Klipper 方言（依赖 `SET_VELOCITY_LIMIT`、`EXCLUDE_OBJECT`、G2/G3 圆弧、M83 相对挤出）；Marlin / RRF 机型暂不支持 |
 | 可打印区 | 宽、深均 ≥ 150 mm |
 | 喷嘴 | 0.4 mm |
 
@@ -59,7 +60,7 @@ Marlin、RepRapFirmware、Repetier 方言机型不在支持范围。
 
 ## 使用
 
-1. 双击 `DOTv1.21.exe`
+1. 双击 `DOTv1.22.exe`
 2. **设置 → 机型** → 在弹出窗口中选择你的打印机（左侧按品牌、右侧按型号，支持搜索）
 3. 输入文字，在预览区确认点位与行数
 4. 点导出，得到 G-code，拷到打印机打印
@@ -95,18 +96,19 @@ Marlin、RepRapFirmware、Repetier 方言机型不在支持范围。
 
 ## 版本
 
-**V1.21**（当前版本）
+**V1.22**（当前版本）
 
-- 打开窗口时预热转写管线，首个按键不再卡顿（冷启动首键 575 ms → 20 ms）
-- 自检耗时降到原来约 1/3：5000 行 G-code 从 24.8 ms 降到 8.6 ms，2.7 万行长文本从 80.3 ms 降到 31.3 ms；19 项检查的判定与措辞完全不变
-- 几何参数收敛为单一定义源：删除 9 个与几何配置表重复的模块级常量，改一处不会再漏一处
-- 界面标题同步为 V1.21
+- 机型池扩至 **239 台 / 47 品牌**：修复新版 Creality 预设的打印区字符串解析，找回被静默丢弃的 12 台；另从 Creality Print 7.3 与 Bambu Studio 2.9 收录 13 台新机型
+- 新增机型全部经过自检验证（239/239），启动块为空时改用中性归零与加热骨架，不再把 `START_PRINT` 发给没有这个宏的机器
+- 机型表增加 `dialect` 与 `source_version` 溯源字段，并在生成链路加入方言转换钩子：Klipper 输出逐字节不变，Marlin 需要转换的指令集中声明，圆弧未实现安全折线前会明确报错而不是输出错误 G-code
+- 原有 214 台的 G-code 逐台比对，字节完全一致；界面标题同步为 V1.22
 
 历史版本：
 
 | 版本 | 说明 | 文档 | 程序 |
 |---|---|---|---|
-| **V1.21** | 当前版本，首键卡顿、自检性能、几何常量单源 | [README-v1.21.md](docs/README-v1.21.md) | `DOTv1.21.exe` |
+| **V1.22** | 当前版本，239 机型、四源合并、方言层准备 | [README-v1.22.md](docs/README-v1.22.md) | `DOTv1.22.exe` |
+| V1.21 | 首键预热、自检提速、几何常量单源 | [README-v1.21.md](docs/README-v1.21.md) | `DOTv1.21.exe` |
 | V1.2 | 214 机型池、动态字数上限、独立机型窗口、中英切换 | [README-v1.2.md](docs/README-v1.2.md) | `DOTv1.2.exe` |
 
 ---
