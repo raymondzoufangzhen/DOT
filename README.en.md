@@ -78,7 +78,16 @@ The program ships with **240 °C nozzle / 75 °C bed**, and those values are set
 
 **Lower the temperature before printing PLA.** At 240 °C PLA strings and oozes, and a 75 °C bed makes it elephant-foot and cling to the plate. Both values are editable in the settings window; the accepted range is 180–260 °C nozzle and 0–100 °C bed.
 
-Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by this program — it only exposes the temperature fields, so set them to whatever that material normally needs.
+### Why PETG is the default
+
+It is a balance of weather resistance, toughness, wear resistance, printability and availability. PETG resists water and weathering, so pieces stay intact over time; it is tough enough to bend rather than snap under impact, and hard enough to withstand repeated fingertip contact; it prints without warping, gives off little odour, and needs neither an enclosure nor extra ventilation. The 240 °C / 75 °C default lands squarely in its normal range, so it works out of the box. The alternatives:
+
+- **PLA** is the easiest to print but has two weaknesses. It is **brittle** — it tends to split along layer lines or shatter on impact, with weaker layer adhesion than other materials — and it weathers poorly: even indoors it slowly absorbs moisture and hydrolyses in humid seasons. Braille pieces are kept and handled repeatedly, so neither trait helps. You can still print with PLA, but change the temperatures first as shown above.
+- **TPU** is flexible and demanding on the feed mechanism: a common Bowden setup tends to slip or clog. This program targets standard Klipper machines and does not adapt the feeder, so TPU is not a default.
+- **ABS** has largely given way to PETG in the consumer market, with fewer brands and colours than before, and it releases irritating fumes that require ventilation or an enclosure — an extra demand on the printing environment.
+- **ASA** genuinely beats PETG on UV and heat resistance, but it usually needs a 90–110 °C bed — at or beyond this program's 100 °C ceiling — plus an enclosed chamber and ventilation for its fumes. It suits long-term outdoor sun or high-heat use; braille pieces are normally read indoors and gain nothing from that advantage, so ASA is **not offered as a general second choice**. If you do need it, tune the settings yourself and mind the ventilation.
+
+Other materials (wood-fill, carbon-fill and so on) are not tuned by this program — it only exposes the temperature fields, so set them to whatever that material normally needs.
 
 ---
 
