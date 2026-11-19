@@ -85,7 +85,7 @@ Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by th
 ## Caveats
 
 1. `printer.cfg` must enable `[gcode_arcs]` and `[exclude_object]`. This is a hard prerequisite — the program can only warn, it cannot set this for you.
-2. Only 7 of the machine profiles have their start/end macros cross-checked against vendor presets; the rest are converted automatically. **Check the macro names and parameters against your actual `printer.cfg` before the first print** — macro signatures differ between firmware versions.
+2. Seven profiles were manually checked against a real `printer.cfg`. A further **68 profiles** have their start/end macros cross-checked across two or more independent vendor presets (21 of those match the macros the program emits line for line; 5 overlap with the manually checked set), for a combined coverage of 70 profiles. The printer picker shows the check level. **Cross-checking only proves agreement between presets — it does not replace checking your actual `printer.cfg`**, since macro signatures differ between firmware versions.
 3. The nozzle is fixed at 0.4 mm. Switching to 0.6 / 0.8 mm would ruin the dot shape, so the option is not offered.
 4. The built-in self-check only guarantees internal consistency of structure, temperature, coordinates and extrusion budget. **It does not replace calibration on the machine.**
 5. Bambu's `.gcode.3mf` packaging has not been tested on hardware. Confirm with the vendor slicer that the file channel accepts raw G-code before relying on it.
@@ -100,6 +100,7 @@ Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by th
 - Every new profile passes the built-in self-check (239/239). When a converted start block is empty, a neutral heating/homing skeleton is used instead of sending `START_PRINT` to machines that do not define it
 - Profiles now carry `dialect` and `source_version` fields, plus a dialect hook in the generation path. Klipper output is byte-identical; Marlin-only conversions are declared centrally, and G2/G3 arcs fail loudly until a safe flattening pass exists
 - All 214 original machines were compared byte-for-byte: no G-code changed. Window title reports V1.22
+- Macro verification coverage grows from 7 to **70 machines**: the official Elegoo / Anycubic / Flashforge forks were added as independent preset sources, with a side-car `cross_check.json` recording each machine's check level and the printer picker showing it directly. Verification data is metadata only — no G-code byte changed
 
 Previous versions:
 
