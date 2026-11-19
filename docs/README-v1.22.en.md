@@ -96,7 +96,7 @@ Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by th
 
 **V1.22** (current)
 
-- Printer pool grows to **239 machines across 47 brands**: fixed the printable-area string parser that silently dropped 12 Klipper machines, and imported 13 more from Creality Print 7.3 and Bambu Studio 2.9
+- Printer pool grows to **239 machines across 47 brands**: fixed the printable-area string parser that silently dropped 12 Klipper machines, and added 13 more machine profiles
 - Every new profile passes the built-in self-check (239/239). When a converted start block is empty, a neutral heating/homing skeleton is used instead of sending `START_PRINT` to machines that do not define it
 - Profiles now carry `dialect` and `source_version` fields, plus a dialect hook in the generation path. Klipper output is byte-identical; Marlin-only conversions are declared centrally, and G2/G3 arcs fail loudly until a safe flattening pass exists
 - All 214 original machines were compared byte-for-byte: no G-code changed. Window title reports V1.22
