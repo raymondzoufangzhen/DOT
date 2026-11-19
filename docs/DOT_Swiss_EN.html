@@ -91,6 +91,9 @@
     color:#737373; }
   .cover-sub{ font-size:20px; font-weight:800; color:var(--red); letter-spacing:5px; }
   .cover-tag{ font-size:18px; line-height:1.8; max-width:640px; }
+  .name-legend{ margin:2px 0 16px; display:flex; flex-direction:column; gap:4px; max-width:700px; }
+  .name-legend > div{ font-size:12.5px; color:var(--grey); line-height:1.55; letter-spacing:.2px; }
+  .name-legend b{ font-weight:800; }
   .cover-tag b{ font-weight:800; }
   .hint{ position:absolute; bottom:70px; left:64px; font-size:11px; letter-spacing:2px;
     color:var(--grey); }
@@ -288,7 +291,12 @@
       <div class="dl rv" style="--d:.38s"><span class="cap" style="color:#92D050">O</span><span class="rest">ptimized</span></div>
       <div class="dl rv" style="--d:.51s"><span class="cap" style="color:#4472C4">T</span><span class="rest">actile<span style="color:#FFC000">D</span><span style="color:#70AD47">o</span><span style="color:#5B9BD5">t</span>s</span></div>
     </div>
-    <div style="width:120px; height:4px; background:var(--red); margin:22px 0 16px;" class="rv" data-later></div>
+    <div style="width:120px; height:4px; background:var(--red); margin:22px 0 14px;" class="rv" data-later></div>
+    <div class="name-legend rv" style="--d:.6s;">
+      <div><span class="en-only"><b style="color:#FFC000">Directly</b> — help becomes effortless: text in, printable file out, no braille or slicing expertise.</span><span class="zh-only"><b style="color:#FFC000">Directly</b>——让帮助者行动无障碍：不懂盲文、不懂切片的志愿者，也能从文字直达可打印文件。</span></div>
+      <div><span class="en-only"><b style="color:#92D050">Optimized</b> — for the fingertips of the helped: purpose-built slicing makes dots form and read better.</span><span class="zh-only"><b style="color:#92D050">Optimized</b>——为被帮助者的指尖优化：专门的切片策略，让盲文凸点在 3D 打印下成型更好、触读更清晰。</span></div>
+      <div><span class="en-only"><b style="color:#4472C4">TactileDots</b> — the direct carrier: touchable braille dot labels.</span><span class="zh-only"><b style="color:#4472C4">TactileDots</b>——项目的直接载体：一枚枚可触摸的盲文凸点。</span></div>
+    </div>
     <div class="cover-sub rv" style="--d:.65s"><span class="en-only">ONE-CLICK BRAILLE PRINTING · </span><span class="zh-only">一键盲文打印</span></div>
     <div class="cover-tag rv" style="--d:.75s; margin-top:12px; font-size:16px;">
       <span class="en-only">A tactile label tool powered by consumer-grade 3D printing —
