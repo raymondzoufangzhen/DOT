@@ -14,7 +14,10 @@ Type text → preview the dots live → export G-code → send it to the printer
 
 | File | Notes |
 |---|---|
-| `DOTv1.2.exe` | Windows 10 / 11 (64-bit), about 17 MB |
+| `DOTv1.21.exe` | **Latest**, Windows 10 / 11 (64-bit), about 17 MB |
+| `DOTv1.2.exe` | Previous version, still downloadable |
+
+Every release keeps its own build and documentation — older versions are never overwritten: [all releases](https://github.com/raymondzoufangzhen/DOT/releases).
 
 Single-file portable build. No installer, no Python, no runtime libraries. Copy it anywhere and double-click.
 
@@ -54,7 +57,7 @@ Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ## Usage
 
-1. Double-click `DOTv1.2.exe`
+1. Double-click `DOTv1.21.exe`
 2. **Settings → Printer** → pick your machine in the dialog that opens (brands on the left, models on the right, with search)
 3. Type your text and check the dot layout and line count in the preview
 4. Export, then copy the G-code to the printer
@@ -90,13 +93,19 @@ Other materials (ABS, TPU, wood-fill, carbon-fill and so on) are not tuned by th
 
 ## Version
 
-**V1.2** (current)
+**V1.21** (current)
 
-- Printer pool expanded to 214 machines across 47 brands, covering Klipper and Bambu Lab models with width and depth both ≥ 150 mm
-- Character limit now derived from each machine's printable width instead of a fixed 220 mm rule
-- Printer selection moved into its own window: brands on the left, models on the right, each scrolling independently, with search by brand or model
-- Interface switches between Chinese and English, following the system language by default
-- Version number shown in the main window title; settings window holds the printer button and language option
+- The transliteration pipeline is warmed up when the window opens, so the first keystroke no longer stalls (cold first key 575 ms → 20 ms)
+- Self-check takes about a third of the time it used to: 24.8 ms → 8.6 ms on a 5,000-line G-code, 80.3 ms → 31.3 ms on a 27,000-line one. All 19 checks reach exactly the same verdicts with the same wording
+- Geometry parameters now have a single source of truth: nine module-level constants that duplicated the profile table were removed, so editing one place can no longer miss another
+- Window title reports V1.21
+
+Previous versions:
+
+| Version | Notes | Docs | Build |
+|---|---|---|---|
+| **V1.21** | Current: first-key stall, self-check speed, single-source geometry | [README-v1.21.en.md](docs/README-v1.21.en.md) | `DOTv1.21.exe` |
+| V1.2 | 214-printer pool, dynamic character limit, dedicated printer window, Chinese/English UI | [README-v1.2.en.md](docs/README-v1.2.en.md) | `DOTv1.2.exe` |
 
 ---
 
