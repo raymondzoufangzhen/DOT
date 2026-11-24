@@ -2,6 +2,10 @@
 
 # DOT — Directly Optimized TactileDots
 
+**Want a quick overview first?** Click the cover above to open the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
+
+[![DOT presentation preview — cover / machine profiles / closing (EN)](docs/assets/presentation_preview_en.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
+
 > The name is the structure:
 > **Directly** — help itself becomes effortless. Volunteers need no braille or slicing expertise: pick a printer, type text, get a printable file — the act of helping is low-barrier too.
 > **Optimized** — for the fingertips of the helped. Purpose-built slicing makes the braille dots form and read better under 3D printing; this layer serves the blind reader's experience.
@@ -10,10 +14,6 @@
 Turns text into braille G-code that can go straight to a 3D printer — English letters, digits and common symbols are supported, and even Chinese characters, so you can print braille labels in English or Chinese. Built for Klipper and Bambu Lab platforms, with 239 printer profiles included.
 
 Type text → preview the dots live → export G-code → send it to the printer.
-
-**Want a quick overview first?** Click the cover below to open the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
-
-[![DOT presentation preview — cover / machine profiles / closing (EN)](docs/assets/presentation_preview_en.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
 
 ---
 
