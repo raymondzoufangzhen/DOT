@@ -2,6 +2,10 @@
 
 # 一键盲文打印 · DOT
 
+**想先快速了解项目？** 点击上方封面查看 [16 页双语在线演示文稿](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)——键盘 ←/→ 翻页，右下角可切换中英文。
+
+[![DOT 项目介绍 · 双语演示文稿预览（封面 / 机型档案 / 结语）](docs/assets/presentation_preview.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
+
 **DOT** — Directly Optimized TactileDots
 
 > 名字即结构：
@@ -12,10 +16,6 @@
 把文本转成可直接送去 3D 打印的盲文 G-code——汉字、英文字母、数字与常用符号都支持，中文标签、英文标签都能打。面向 Klipper 与拓竹平台，内置 239 台机型配置。
 
 输入文字 → 实时预览点位 → 导出 G-code → 交给打印机。
-
-**想先快速了解项目？** 点击下方封面查看 [16 页双语在线演示文稿](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)——键盘 ←/→ 翻页，右下角可切换中英文。
-
-[![DOT 项目介绍 · 双语演示文稿预览（封面 / 机型档案 / 结语）](docs/assets/presentation_preview.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
 
 ---
 
