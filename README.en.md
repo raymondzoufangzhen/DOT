@@ -23,8 +23,9 @@ Type text → preview the dots live → export G-code → send it to the printer
 
 | File | Notes |
 |---|---|
-| `DOTv1.22.exe` | **Latest**, Windows 10 / 11 (64-bit), about 17 MB |
-| `DOTv1.21.exe` | Previous version, still downloadable |
+| `DOTv1.23.exe` | **Latest**, Windows 10 / 11 (64-bit), about 18 MB |
+| `DOTv1.22.exe` | Previous version, still downloadable |
+| `DOTv1.21.exe` | Older version, still downloadable |
 | `DOTv1.2.exe` | Older version, still downloadable |
 
 Every release keeps its own build and documentation — older versions are never overwritten: [all releases](https://github.com/raymondzoufangzhen/DOT/releases).
@@ -44,6 +45,7 @@ Single-file portable build. No installer, no Python, no runtime libraries. Copy 
 - **G-code export, STL optional**: print the G-code directly; export STL when you need further processing.
 - **"6 processes" test coupon**: a built-in calibration part for comparing forming quality on your own machine and dialling in its parameters.
 - **GUI**: live dot preview, character limit computed from the current machine's printable width, Chinese/English interface, light/dark theme following the system.
+- **Editable pinyin labels**: polyphonic characters with competing readings always show full pinyin plus a numeric tone. Other Chinese characters keep a transparent placeholder until clicked; click again to cycle through **all** candidate readings of a polyphonic character (e.g. 长 zhǎng → cháng). Single-reading characters do not cycle tones — edit the pinyin itself when needed. The dot pattern, G-code and STL all follow the selected reading.
 
 ---
 
@@ -67,9 +69,9 @@ Marlin, RepRapFirmware and Repetier dialect machines are not supported.
 
 ## Usage
 
-1. Double-click `DOTv1.22.exe`
+1. Double-click `DOTv1.23.exe`
 2. **Settings → Printer** → pick your machine in the dialog that opens (brands on the left, models on the right, with search)
-3. Type your text and check the dot layout and line count in the preview
+3. Type your text and check the dot layout and line count in the preview; click a Hanzi to reveal its pinyin (polyphonic: cycle readings), or click the pinyin itself to edit it
 4. Export, then copy the G-code to the printer
 
 **For a first run, print the "6 processes" test coupon first** and confirm Z-offset and flow before printing real content; braille dots are far more sensitive to first-layer height than ordinary models.
@@ -114,7 +116,13 @@ Since no single material suits every situation, the program defaults to PETG for
 
 ## Version
 
-**V1.22** (current)
+**V1.23** (current)
+
+- Preview pinyin labels are now clickable: polyphonic characters cycle through every candidate reading on each Hanzi click; single-reading characters only reveal their pinyin and are edited by hand.
+- A new **Minimal / Show all** setting controls pinyin visibility: Show all keeps every reading visible while ambiguous polyphonic characters stay yellow-highlighted. The selected reading flows through the same conversion path for preview, G-code and STL.
+- Nine new regression tests bring the automated suite to **65 passing tests**; all seven EXE self-check samples pass.
+
+**V1.22**
 
 - Printer pool grows to **239 machines across 47 brands**: fixed the printable-area string parser that silently dropped 12 Klipper machines, and added 13 more machine profiles
 - Every new profile passes the built-in self-check (239/239). When a converted start block is empty, a neutral heating/homing skeleton is used instead of sending `START_PRINT` to machines that do not define it
@@ -126,7 +134,8 @@ Previous versions:
 
 | Version | Notes | Docs | Build |
 |---|---|---|---|
-| **V1.22** | Current: 239 machines, four-source merge, dialect groundwork | [README-v1.22.en.md](docs/README-v1.22.en.md) | `DOTv1.22.exe` |
+| **V1.23** | Current: editable pinyin labels in the preview | [README-v1.23.en.md](docs/README-v1.23.en.md) | `DOTv1.23.exe` |
+| V1.22 | 239 machines, four-source merge, dialect groundwork | [README-v1.22.en.md](docs/README-v1.22.en.md) | `DOTv1.22.exe` |
 | V1.21 | First-key warm-up, faster self-check, single-source geometry | [README-v1.21.en.md](docs/README-v1.21.en.md) | `DOTv1.21.exe` |
 | V1.2 | 214-printer pool, dynamic character limit, dedicated printer window, Chinese/English UI | [README-v1.2.en.md](docs/README-v1.2.en.md) | `DOTv1.2.exe` |
 
