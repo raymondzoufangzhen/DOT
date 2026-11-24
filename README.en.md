@@ -30,6 +30,8 @@ Type text → preview the dots live → export G-code → send it to the printer
 
 Every release keeps its own build and documentation — older versions are never overwritten: [all releases](https://github.com/raymondzoufangzhen/DOT/releases).
 
+> **What's new in V1.23**: the dot preview now has editable pinyin labels. Polyphonic characters with competing readings always show full pinyin plus a numeric tone; other Chinese characters stay hidden until clicked. Click again to cycle through **all** candidate readings of a polyphonic character (e.g. 长 zhǎng → cháng); single-reading characters do not cycle — click the pinyin itself to type a reading. A new setting offers *minimal* vs *full* annotation, where full mode shows every pinyin while keeping ambiguous polyphonic characters highlighted in yellow. The chosen reading flows through the same conversion path so the preview, G-code and STL stay in sync. See the [V1.23 notes](docs/README-v1.23.en.md).
+
 Single-file portable build. No installer, no Python, no runtime libraries. Copy it anywhere and double-click.
 
 > If Windows SmartScreen blocks the first launch, click *More info* → *Run anyway*. The executable is not code-signed, which is the normal prompt for unsigned binaries.
