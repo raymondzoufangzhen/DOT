@@ -2,9 +2,9 @@
 
 # 一键盲文打印 · DOT
 
-**想先快速了解项目？** 点击上方封面查看 [16 页双语在线演示文稿](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)——键盘 ←/→ 翻页，右下角可切换中英文。
-
 [![DOT 项目介绍 · 双语演示文稿预览（封面 / 机型档案 / 结语）](docs/assets/presentation_preview.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
+
+**想先快速了解项目？** 点击封面查看 [16 页双语在线演示文稿](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)——键盘 ←/→ 翻页，右下角可切换中英文。
 
 **DOT** — Directly Optimized TactileDots
 
