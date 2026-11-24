@@ -2,9 +2,9 @@
 
 # DOT — Directly Optimized TactileDots
 
-**Want a quick overview first?** Click the cover above to open the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
-
 [![DOT presentation preview — cover / machine profiles / closing (EN)](docs/assets/presentation_preview_en.jpg)](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html)
+
+**Want a quick overview first?** Click the cover to open the [16-page bilingual presentation](https://raymondzoufangzhen.github.io/DOT/DOT_Swiss_EN.html) — navigate with ←/→ arrow keys, switch EN/CN at the bottom-right corner.
 
 > The name is the structure:
 > **Directly** — help itself becomes effortless. Volunteers need no braille or slicing expertise: pick a printer, type text, get a printable file — the act of helping is low-barrier too.
