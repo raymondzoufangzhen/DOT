@@ -122,7 +122,7 @@ Since no single material suits every situation, the program defaults to PETG for
 
 - Preview pinyin labels are now clickable: polyphonic characters cycle through every candidate reading on each Hanzi click; single-reading characters only reveal their pinyin and are edited by hand.
 - A new **Minimal / Show all** setting controls pinyin visibility: Show all keeps every reading visible while ambiguous polyphonic characters stay yellow-highlighted. The selected reading flows through the same conversion path for preview, G-code and STL.
-- Nine new regression tests bring the automated suite to **65 passing tests**; all seven EXE self-check samples pass.
+- Eleven regression tests bring the automated suite to **67 passing tests**; all seven EXE self-check samples pass.
 
 **V1.22**
 
